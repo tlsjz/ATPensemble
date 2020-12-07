@@ -216,7 +216,7 @@ class ATPensemble(object):
     
     def lgbprediction(self, combinefeaturedic):
         model = joblib.load('/home/songjiazhi/atpcapsule/paper/lgb_model.m')
-        lightgbmprediction = model.predict(combinefeaturedic)
+        lightgbmprediction = model.predict(combinefeaturedic, num_iteration=450)
         return lightgbmprediction
     
     def predictionensemble(self, multiincepresnetprediction, multixceptionprediction, lgbprediction):
